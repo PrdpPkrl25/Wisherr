@@ -4,26 +4,38 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreEventRequest;
 use App\Model\Event;
-use http\Message;
+use App\Repository\EventRepository;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
+
+    /**
+     * @var EventRepository
+     */
+    private $eventRepository;
+
+    public function __construct(EventRepository $eventRepository)
+    {
+        $this->middleware('auth');
+        $this->eventRepository=$eventRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-        $events=Event::all();
+        $events=$this->eventRepository->getIndexdata();
         return view('event.index',compact('events'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
@@ -34,14 +46,11 @@ class EventController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreEventRequest $request)
     {
-       $event= new Event();
-       $event->event_name=$request->input('event_name');
-       $event->event_date=$request->input('event_date');
-       $event->save();
+        $this->eventRepository->handleCreate($request);
        return redirect()->route('events.index')->with('message','Event Created Sucessfully');
 
 
@@ -51,24 +60,23 @@ class EventController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Event  $event
-     * @return \Illuminate\Http\Response
+     * @param  Event  $event
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show($id)
+    public function show(Event $event)
     {
-        $event=Event::find($id);
         return view('event.show',compact('event'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Event  $event
-     * @return \Illuminate\Http\Response
+     * @param  Event  $event
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {
-        $event=Event::find($id);
+        $event=$this->eventRepository->getEditdata($id);
         return view('event.edit',compact('event'));
     }
 
@@ -76,14 +84,12 @@ class EventController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Event  $event
-     * @return \Illuminate\Http\Response
+     * @param  Event  $event
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(StoreEventRequest $request,$id)
     {
-        $requestdata=$request->all();
-        $event=Event::find($id);
-        $event->update($requestdata);
+        $this->eventRepository->handleEdit($request,$id);
         return redirect()->route('events.show',$id);
 
     }
@@ -92,12 +98,11 @@ class EventController extends Controller
      * Remove the specified resource from storage.
      *
      * @param $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {
-        $event=Event::find($id);
-        $event->delete();
+       $this->eventRepository->handleDelete($id);
         return redirect()->route('events.index');
     }
 }

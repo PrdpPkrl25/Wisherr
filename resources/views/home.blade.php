@@ -17,7 +17,13 @@
                     <p class="row-cols-1">Click on the button below to create your event or view your event:</p>
                         <div class="col-md-6 offset-md-4">
                            <a id="eventform" class="btn btn-primary" href="{{route('events.create')}}">Create Event</a>
-                            <a id="eventform" class="btn btn-primary" href="{{route('events.index')}}">View Event</a>
+                            <a id="eventform" class="btn btn-primary" href="{{route('events.index')}}">View Events</a>
+                        </div>
+                        <br>
+                        <p class="row-cols-1">Click on the button below to create a template or view created template:</p>
+                        <div class="col-md-6 offset-md-4">
+                           <a id="templateform" class="btn btn-primary" href="{{route('templates.create')}}">Create Template</a>
+                            <a id="templateform" class="btn btn-primary" href="{{route('templates.index')}}">View Templates</a>
                         </div>
 
 

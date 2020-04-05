@@ -173,10 +173,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\peter\projects\PHP\Code\EventWishes\app\Model" />
+      <recent name="C:\Users\peter\projects\PHP\Code\EventWishes\app\Repository" />
       <recent name="C:\Users\peter\projects\PHP\Code\EventWishes\app" />
       <recent name="C:\Users\peter\projects\PHP\Code\EventWishes\app\Http\Controllers" />
       <recent name="C:\Users\peter\projects\PHP\Code\EventWishes\app\Http\Controllers\Event" />
-      <recent name="C:\Users\peter\projects\PHP\Code\EventWishes\app\Model" />
     </key>
   </component>
   <component name="RunManager">
@@ -207,13 +208,21 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="233" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.720@0.0.1280.720" timestamp="1586066321072" />
-    <state x="477" y="292" key="NewPhpFileDialog" timestamp="1586091334121">
+    <state x="371" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1586109695777">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="477" y="292" key="NewPhpFileDialog/0.0.1280.720@0.0.1280.720" timestamp="1586091334121" />
-    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1586083659046">
+    <state x="371" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.720@0.0.1280.720" timestamp="1586109695777" />
+    <state x="395" y="195" key="NewPhpClassDialog" timestamp="1586109008562">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1280.720@0.0.1280.720" timestamp="1586083659046" />
+    <state x="395" y="195" key="NewPhpClassDialog/0.0.1280.720@0.0.1280.720" timestamp="1586109008562" />
+    <state x="477" y="292" key="NewPhpFileDialog" timestamp="1586112682530">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="477" y="292" key="NewPhpFileDialog/0.0.1280.720@0.0.1280.720" timestamp="1586112682530" />
+    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1586117707346">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1280.720@0.0.1280.720" timestamp="1586117707346" />
   </component>
 </project>

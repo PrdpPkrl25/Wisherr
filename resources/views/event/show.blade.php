@@ -15,7 +15,7 @@
                             @csrf
                             @method('delete')
                             <a class="btn btn-primary" href="{{route('events.edit',$event->id)}}">Edit Event</a>
-                        <button class="btn btn-danger">Delete Event</button>
+                            <button class="btn btn-danger">Delete Event</button>
                         </form>
                     </div>
                 </div>
