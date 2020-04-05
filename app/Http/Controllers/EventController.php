@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Event;
+use App\Http\Requests\StoreEventRequest;
+use App\Model\Event;
+use http\Message;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -14,7 +16,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        $events=Event::all();
+        return view('event.index',compact('events'));
     }
 
     /**
@@ -24,7 +27,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        return view('event.create');
     }
 
     /**
@@ -33,9 +36,16 @@ class EventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreEventRequest $request)
     {
-        //
+       $event= new Event();
+       $event->event_name=$request->input('event_name');
+       $event->event_date=$request->input('event_date');
+       $event->save();
+       return redirect()->route('events.index')->with('message','Event Created Sucessfully');
+
+
+
     }
 
     /**
@@ -44,9 +54,10 @@ class EventController extends Controller
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function show(Event $event)
+    public function show($id)
     {
-        //
+        $event=Event::find($id);
+        return view('event.show',compact('event'));
     }
 
     /**
@@ -55,9 +66,10 @@ class EventController extends Controller
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function edit(Event $event)
+    public function edit($id)
     {
-        //
+        $event=Event::find($id);
+        return view('event.edit',compact('event'));
     }
 
     /**
@@ -67,19 +79,25 @@ class EventController extends Controller
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Event $event)
+    public function update(StoreEventRequest $request,$id)
     {
-        //
+        $requestdata=$request->all();
+        $event=Event::find($id);
+        $event->update($requestdata);
+        return redirect()->route('events.show',$id);
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Event  $event
+     * @param $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Event $event)
+    public function destroy($id)
     {
-        //
+        $event=Event::find($id);
+        $event->delete();
+        return redirect()->route('events.index');
     }
 }

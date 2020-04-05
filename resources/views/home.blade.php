@@ -13,8 +13,14 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                <h2 class="text-center">Welcome to Event Wishes</h2>
+                    <p class="row-cols-1">Click on the button below to create your event or view your event:</p>
+                        <div class="col-md-6 offset-md-4">
+                           <a id="eventform" class="btn btn-primary" href="{{route('events.create')}}">Create Event</a>
+                            <a id="eventform" class="btn btn-primary" href="{{route('events.index')}}">View Event</a>
+                        </div>
 
-                    You are logged in!
+
                 </div>
             </div>
         </div>
