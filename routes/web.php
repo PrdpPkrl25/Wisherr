@@ -24,3 +24,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('events','EventController');
 Route::resource('templates','TemplateController');
+Route::resource('contacts','ContactController');
+
+Route::resource('messages','MessageController')->except(['create']);
+Route::get('create/{event_id}','MessageController@create')->name('messages.create');
+

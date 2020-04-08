@@ -25,6 +25,12 @@
                            <a id="templateform" class="btn btn-primary" href="{{route('templates.create')}}">Create Template</a>
                             <a id="templateform" class="btn btn-primary" href="{{route('templates.index')}}">View Templates</a>
                         </div>
+                        <br>
+                        <p class="row-cols-1">Click on the button below to upload your contact list:</p>
+                        <div class="col-md-6 offset-md-4">
+                            <a id="templateform" class="btn btn-primary" href="{{route('contacts.create')}}">Create Contact</a>
+                            <a id="templateform" class="btn btn-primary" href="{{route('contacts.index')}}">View Contact</a>
+                        </div>
 
 
                 </div>

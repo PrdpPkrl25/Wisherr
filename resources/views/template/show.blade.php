@@ -7,7 +7,6 @@
                     <div class="card-header">{{$template->template_name}} Greetings Detail:</div>
 
                     <div class="card-body">
-                        <h2>Dear Receiver,</h2>
                         <h3>{{$template->content}}</h3>
                         <form action="{{route('templates.destroy',$template->id)}}" method="post">
                             @csrf

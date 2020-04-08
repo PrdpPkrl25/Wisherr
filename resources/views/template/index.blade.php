@@ -7,7 +7,7 @@
                     {{session('message')}}
                 @endif
                 <div class="card">
-                    <div class="card-header">Greeting Template List</div>
+                    <div class="card-header">Greeting Template List <a class="btn btn-info offset-md-7 " href="{{route('templates.create')}}">Create New</a></div>
 
                     <div class="card-body">
 

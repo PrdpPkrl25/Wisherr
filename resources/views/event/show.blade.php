@@ -16,8 +16,41 @@
                             @method('delete')
                             <a class="btn btn-primary" href="{{route('events.edit',$event->id)}}">Edit Event</a>
                             <button class="btn btn-danger">Delete Event</button>
+                           <a class="btn btn-dark" href="{{route('messages.create',$event->id)}}">Set Message</a>
                         </form>
-                    </div>
+
+{{--                        <div class="card">--}}
+{{--                            <div class="card-header">Your Event Message List</div>--}}
+
+{{--                            <div class="card-body">--}}
+
+{{--                                <table class="table table-bordered">--}}
+{{--                                    <thead>--}}
+{{--                                    <tr>--}}
+{{--                                        <th>S.N</th>--}}
+{{--                                        <th>Message Content</th>--}}
+{{--                                        <th>Receiver</th>--}}
+{{--                                        <th>Action</th>--}}
+{{--                                    </tr>--}}
+{{--                                    </thead>--}}
+{{--                                    <tbody>--}}
+{{--                                    @foreach($messages as $message)--}}
+{{--                                        <tr>--}}
+{{--                                            <td>{{$loop->iteration}}</td>--}}
+{{--                                            <td>{{$message->message_content}}</td>--}}
+{{--                                            <td></td>--}}
+{{--                                            <td>--}}
+{{--                                                <a class="btn btn-info" href="{{route('message.show',$message->id)}}">Show</a>--}}
+{{--                                            </td>--}}
+{{--                                        </tr>--}}
+{{--                                    @endforeach--}}
+{{--                                    </tbody>--}}
+{{--                                </table>--}}
+
+{{--                            </div>--}}
+{{--                        </div>--}}
+
+                     </div>
                 </div>
             </div>
         </div>

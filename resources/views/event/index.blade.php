@@ -7,7 +7,9 @@
                     {{session('message')}}
                 @endif
                 <div class="card">
-                    <div class="card-header">Your Event List</div>
+                    <div class="card-header ">Your Event List
+                            <a id="createeventbtn" class="btn btn-primary offset-md-8" href="{{route('events.create')}}">Create Event</a>
+                    </div>
 
                     <div class="card-body">
 
