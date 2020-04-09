@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="359cea87-7b15-469f-8e74-aeeefc8523d9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/event/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/event/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/event/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/event/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Message.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Model/Receiver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Receiver.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repository/MessageRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repository/MessageRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_06_071639_create_messages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_06_071639_create_messages_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/template/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/template/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/template/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/template/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/message/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/message/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/message/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/message/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -204,7 +201,9 @@
       <workItem from="1586148431938" duration="28676000" />
       <workItem from="1586235030980" duration="6701000" />
       <workItem from="1586265921781" duration="9195000" />
-      <workItem from="1586320139531" duration="19468000" />
+      <workItem from="1586320139531" duration="26974000" />
+      <workItem from="1586405408671" duration="11453000" />
+      <workItem from="1586422803385" duration="2525000" />
     </task>
     <servers />
   </component>
@@ -236,17 +235,17 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="144" y="6" key="SettingsEditor/0.0.1280.720@0.0.1280.720" timestamp="1586175495307" />
-    <state x="349" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1586320196857">
+    <state x="349" y="189" key="com.intellij.ide.util.TipDialog" timestamp="1586422815069">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="349" y="189" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1586320196857" />
-    <state x="297" y="161" key="run.anything.popup" timestamp="1586353099080">
+    <state x="349" y="189" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1586422815069" />
+    <state x="297" y="161" key="run.anything.popup" timestamp="1586423631711">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="297" y="161" key="run.anything.popup/0.0.1280.720@0.0.1280.720" timestamp="1586353099080" />
-    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1586367488688">
+    <state x="297" y="161" key="run.anything.popup/0.0.1280.720@0.0.1280.720" timestamp="1586423631711" />
+    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1586416119131">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1280.720@0.0.1280.720" timestamp="1586367488688" />
+    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1280.720@0.0.1280.720" timestamp="1586416119131" />
   </component>
 </project>

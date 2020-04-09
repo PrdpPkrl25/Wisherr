@@ -4,7 +4,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{$event->event_name}} Event Detail:</div>
+                    <div class="card-header">Event Message {{$messsage->id}}:</div>
 
                     <div class="card-body">
                         <h2>{{$message->message_content}}</h2>
@@ -37,7 +37,7 @@
                                         <tr>
                                             <td>{{$loop->iteration}}</td>
                                             <td>{{$message->message_content}}</td>
-                                            <td>{{}}</td>
+                                            <td></td>
                                             <td>
                                                 <a class="btn btn-info" href="{{route('message.show',$message->id)}}">Show</a>
                                             </td>
@@ -51,13 +51,7 @@
                     </div>
                 </div>
             </div>
-            @endsection
-
         </div>
     </div>
-    </div>
-    </div>
-    </div>
 @endsection
-
 

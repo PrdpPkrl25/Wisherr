@@ -21,13 +21,19 @@
 
 
 
+{{--
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+  --}}{{--  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css" rel="stylesheet"/>
+--}}{{--
 
+    <script type="text/javascript">
+        /*$('#datetimepicker2').datetimepicker({format : "DD/MM/YYYY hh:mm"});*/
+
+    </script>--}}
 </head>
 <body>
     <div id="app">
@@ -86,8 +92,6 @@
             @yield('content')
         </main>
     </div>
-<script>
-    $('#datetimepicker2').datetimepicker({format : "DD/MM/YYYY hh:mm"});
-</script>
+
 </body>
 </html>

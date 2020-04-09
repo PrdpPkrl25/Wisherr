@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Receiver extends Model
 {
     protected $table = 'receivers';
-    protected $fillable=['user_id'];
+    protected $fillable=['name','email','phone'];
 
 }

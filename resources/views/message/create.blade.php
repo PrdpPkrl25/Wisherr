@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -9,9 +10,9 @@
 
                     <div class="card-body">
 
-                        <form method="post" action="{{route('messages.store')}}">
+                        <form method="post" action="{{route('messages.store')}}" id="createMessage">
                             @csrf
-                            <div class="card">
+                             <div class="card">
                                 <div class="card-header">Enter Receiver Detail:</div>
 
                                 <div class="card-body">
@@ -45,7 +46,8 @@
                                         <label for="receiver_detail" class="col-md-4 col-form-label text-md-right">{{__('Or, Select Receiver From Your Existing Contact:')}}</label>
 
                                         <div class="col-md-6">
-                                            <select id="receiver_detail" name="receiver_detail" class="form-control">
+                                            <select id="receiver_detail" name="contact_id" class="form-control">
+                                                <option value="">Choose Contact</option>
                                                 @foreach($contacts as $contact)
                                                     <option value="{{$contact->id}}">{{$contact->name}}</option>
                                                 @endforeach
@@ -72,7 +74,8 @@
                                         <label for="template" class="col-md-4 col-form-label text-md-right">{{__('Or, Select Message Content From Available Template:')}}</label>
 
                                         <div class="col-md-6">
-                                            <select id="template" name="template_id" class="form-control">
+                                            <select id="template" name="template" class="form-control" >
+                                                <option value="">Choose Template</option>
                                                 @foreach($templates as $template)
                                                     <option value="{{$template->id}}">{{$template->template_name}}</option>
                                                 @endforeach
@@ -81,10 +84,10 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="datetimepicker2" class="col-md-4 col-form-label text-md-right">{{__('Message Time:')}}</label>
+                                        <label for="datetimepicker" class="col-md-4 col-form-label text-md-right">{{__('Message Time:')}}</label>
 
                                         <div class="col-md-6">
-                                            <input type='text'  class="date form-control" name="message_time" id='datetimepicker2'  />
+                                            <input type='datetime-local'  class=" form-control" name="message_time" id='datetimepicker'  />
 
                                         </div>
                                     </div>
@@ -108,4 +111,40 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+
+        jQuery(document).ready(function(){
+            jQuery('#receiver_detail').change(function(e){
+                e.preventDefault();
+                jQuery.ajax({
+                    url: "{{ url('/ajax/getcontact') }}",
+                    method: 'get',
+                    data: {
+                        contact_id: jQuery('#receiver_detail').val(),
+                    },
+                    success: function(result){
+                        $(function () {
+                            console.log(result);
+                        });
+                    }});
+            });
+            jQuery('#template').change(function(e){
+                e.preventDefault();
+                jQuery.ajax({
+                    url: "{{ url('/ajax/gettemplate') }}",
+                    method: 'get',
+                    data: {
+                        template_id: jQuery('#template').val(),
+                    },
+                    success: function(result){
+                        $(function () {
+                            $("#message_content").val(result);
+                        });
+                    }});
+            });
+        });
+
+
+    </script>
 @endsection

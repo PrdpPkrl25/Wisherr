@@ -20,7 +20,7 @@ class CreateMessagesTable extends Migration
             $table->integer('template_id')->nullable();
             $table->text('message_content');
             $table->integer('user_id');
-            $table->time('message_time');
+            $table->datetime('message_time');
             $table->timestamps();
         });
     }

@@ -26,21 +26,23 @@ class MessageRepository
         $phone=$request->input('phone');
         $receiver=Receiver::create(['name'=>$name,'email'=>$email,'phone'=>$phone]);
         $receiverId=$receiver->id;
-        if($request['receiver_detail']!=null)
+        if($request['contact_id']!=null)
         {
-            $id=$request['receiver_detail.id'];
+            $id=$request['contact_id'];
         }
         $userId=Auth::id();
         $userName=Auth::user()->name;
         $request['message_content']="Dear $name,\r\n".$request['message_content']."\r\nFrom :$userName";
         $message_content=$request['message_content'];
         $template_id=$request['template_id'];
+        $message_time=$request['message_time'];
         $message=Message::create([
             'sender_id'=>$userId,
             'receiver_id'=>$receiverId,
             'template_id'=>$template_id,
             'message_content'=>$message_content,
-            'user_id'=>$userId
+            'user_id'=>$userId,
+            'message_time'=>$message_time
         ]);
         $messageId=$message->id;
         return $messageId;
