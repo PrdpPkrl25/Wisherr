@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreMessageRequest;
+use App\Model\Event;
 use App\Model\Message;
+use App\Model\Receiver;
 use App\Repository\MessageRepository;
 use Illuminate\Http\Request;
 
@@ -45,12 +47,12 @@ class MessageController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function store(StoreMessageRequest $request)
+    public function store($event_id,StoreMessageRequest $request)
     {
-        $id=$this->messageRepository->handleCreate($request);
-        return redirect()->route('messages.show',$id);
+       list($message,$event,$receiver)=$this->messageRepository->handleCreate($request,$event_id);
+        return view('message.show',compact('message','event','receiver'));
     }
 
     /**
@@ -61,7 +63,9 @@ class MessageController extends Controller
      */
     public function show(Message $message)
     {
-        return view('message.show',compact('message'));
+        $event=Event::where('id','=',$message->event_id)->first();
+        $receiver=Receiver::where('id','=',$message->receiver_id)->first();
+        return view('message.show',compact('message','event','receiver'));
     }
 
     /**
@@ -90,11 +94,12 @@ class MessageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Message  $message
+     * @param  Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Message $message)
+    public function destroy($id)
     {
-        //
+       $event_id=$this->messageRepository->handleDelete($id);
+        return redirect()->route('events.show',$event_id);
     }
 }

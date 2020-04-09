@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreEventRequest;
 use App\Model\Event;
+use App\Model\Message;
 use App\Repository\EventRepository;
 use Illuminate\Http\Request;
 
@@ -65,7 +66,8 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        return view('event.show',compact('event'));
+        $messages=Message::where('event_id','=',$event->id)->get();
+        return view('event.show',compact('event','messages'));
     }
 
     /**

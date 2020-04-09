@@ -28,7 +28,7 @@ Route::resource('contacts','ContactController');
 
 Route::get('create/{event_id}','MessageController@create')->name('messages.create');
 Route::post('create/{event_id}','MessageController@store')->name('messages.store');
-Route::resource('messages','MessageController')->except(['create']);
+Route::resource('messages','MessageController')->except(['create','store']);
 
 
 Route::get('ajax/gettemplate','AjaxController@getTemplateContent')->name('template.get');

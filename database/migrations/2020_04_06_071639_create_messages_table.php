@@ -16,10 +16,10 @@ class CreateMessagesTable extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
             $table->integer('sender_id');
+            $table->integer('event_id');
             $table->integer('receiver_id');
             $table->integer('template_id')->nullable();
             $table->text('message_content');
-            $table->integer('user_id');
             $table->datetime('message_time');
             $table->timestamps();
         });

@@ -19,40 +19,28 @@ class MessageRepository
 
     }
 
-    public function handleCreate($request)
+    public function handleCreate($request,$event_id)
     {
-        $name=$request->input('name');
-        $email=$request->input('email');
-        $phone=$request->input('phone');
-        $receiver=Receiver::create(['name'=>$name,'email'=>$email,'phone'=>$phone]);
+        $event=Event::where('id','=',$event_id)->first();
+        $receiver=Receiver::create($request->all());
         $receiverId=$receiver->id;
-        if($request['contact_id']!=null)
-        {
-            $id=$request['contact_id'];
-        }
         $userId=Auth::id();
-        $userName=Auth::user()->name;
-        $request['message_content']="Dear $name,\r\n".$request['message_content']."\r\nFrom :$userName";
         $message_content=$request['message_content'];
-        $template_id=$request['template_id'];
         $message_time=$request['message_time'];
         $message=Message::create([
             'sender_id'=>$userId,
+            'event_id'=>$event_id,
             'receiver_id'=>$receiverId,
-            'template_id'=>$template_id,
             'message_content'=>$message_content,
-            'user_id'=>$userId,
             'message_time'=>$message_time
         ]);
-        $messageId=$message->id;
-        return $messageId;
+        return array($message,$event,$receiver);
 
     }
 
     public function createViewData($id)
     {
         $templates=Template::all();
-        //dd($templates);
         $contacts=Contact::where('user_id','=',Auth::id())->get();
         $event=Event::find($id);
         return array($event,$contacts,$templates);
@@ -69,8 +57,11 @@ class MessageRepository
 
     }
 
-    public function handleDelete($request)
+    public function handleDelete($id)
     {
-
+        $message=Message::find($id);
+        $event=Event::where('id','=',$message->event_id)->first();
+        $message->delete();
+        return $event;
     }
 }

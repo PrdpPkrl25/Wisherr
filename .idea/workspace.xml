@@ -2,14 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="359cea87-7b15-469f-8e74-aeeefc8523d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EventController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreMessageRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreMessageRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Model/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Message.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Receiver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Receiver.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repository/MessageRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repository/MessageRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_06_053717_create_senders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_06_053717_create_senders_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_06_071639_create_messages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_06_071639_create_messages_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/event/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/event/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/message/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/message/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/message/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/message/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/message/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/message/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -203,7 +208,7 @@
       <workItem from="1586265921781" duration="9195000" />
       <workItem from="1586320139531" duration="26974000" />
       <workItem from="1586405408671" duration="11453000" />
-      <workItem from="1586422803385" duration="2525000" />
+      <workItem from="1586422803385" duration="22847000" />
     </task>
     <servers />
   </component>
@@ -239,13 +244,17 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="349" y="189" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1586422815069" />
+    <state x="310" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1586463565014">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="310" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1280.720@0.0.1280.720" timestamp="1586463565014" />
     <state x="297" y="161" key="run.anything.popup" timestamp="1586423631711">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="297" y="161" key="run.anything.popup/0.0.1280.720@0.0.1280.720" timestamp="1586423631711" />
-    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1586416119131">
+    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1586463223509">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1280.720@0.0.1280.720" timestamp="1586416119131" />
+    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1280.720@0.0.1280.720" timestamp="1586463223509" />
   </component>
 </project>

@@ -10,12 +10,25 @@
 
                     <div class="card-body">
 
-                        <form method="post" action="{{route('messages.store')}}" id="createMessage">
+                        <form method="post" action="{{route('messages.store',$event->id)}}" id="createMessage">
                             @csrf
                              <div class="card">
                                 <div class="card-header">Enter Receiver Detail:</div>
 
                                 <div class="card-body">
+
+                                    <div class="form-group row">
+                                        <label for="contact_detail" class="col-md-4 col-form-label text-md-right">{{__('Select Receiver From Your Existing Contact:')}}</label>
+
+                                        <div class="col-md-6">
+                                            <select id="contact_detail" name="contact_detail" class="form-control">
+                                                <option value="">Choose Contact</option>
+                                                @foreach($contacts as $contact)
+                                                    <option value="{{$contact->id}}">{{$contact->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
 
                                     <div class="form-group row">
                                         <label for="receiver_name" class="col-md-4 col-form-label text-md-right">{{__('Receiver Name')}}</label>
@@ -41,37 +54,18 @@
                                         </div>
                                     </div>
 
-
-                                    <div class="form-group row">
-                                        <label for="receiver_detail" class="col-md-4 col-form-label text-md-right">{{__('Or, Select Receiver From Your Existing Contact:')}}</label>
-
-                                        <div class="col-md-6">
-                                            <select id="receiver_detail" name="contact_id" class="form-control">
-                                                <option value="">Choose Contact</option>
-                                                @foreach($contacts as $contact)
-                                                    <option value="{{$contact->id}}">{{$contact->name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-
                                 </div>
                             </div>
+
+
 
                             <div class="card" style="margin-top: 10px" >
                                 <div class="card-header">Enter Message Detail:</div>
 
                                 <div class="card-body">
-                                    <div class="form-group row">
-                                        <label for="message_content" class="col-md-4 col-form-label text-md-right">{{__('Message Content')}}</label>
-
-                                        <div class="col-md-6">
-                                            <textarea name="message_content" class="form-group form-control" id="message_content"></textarea>
-                                        </div>
-                                    </div>
 
                                     <div class="form-group row">
-                                        <label for="template" class="col-md-4 col-form-label text-md-right">{{__('Or, Select Message Content From Available Template:')}}</label>
+                                        <label for="template" class="col-md-4 col-form-label text-md-right">{{__('Select Message Content From Available Template:')}}</label>
 
                                         <div class="col-md-6">
                                             <select id="template" name="template" class="form-control" >
@@ -84,15 +78,22 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="datetimepicker" class="col-md-4 col-form-label text-md-right">{{__('Message Time:')}}</label>
+                                        <label for="message_content" class="col-md-4 col-form-label text-md-right">{{__('Message Content')}}</label>
 
                                         <div class="col-md-6">
-                                            <input type='datetime-local'  class=" form-control" name="message_time" id='datetimepicker'  />
-
+                                            <textarea name="message_content" class="form-group form-control" id="message_content"></textarea>
                                         </div>
                                     </div>
 
 
+                                    <div class="form-group row">
+                                        <label for="message_time" class="col-md-4 col-form-label text-md-right">{{__('Message Time:')}}</label>
+
+                                        <div class="col-md-6">
+                                            <input type='datetime-local'  class=" form-control" name="message_time" id='message_time' value="{{$event->event_date}}"  />
+
+                                        </div>
+                                    </div>
 
                                 </div>
                             </div>
@@ -111,24 +112,29 @@
             </div>
         </div>
     </div>
+@endsection
 
-    <script type="text/javascript">
+@section('script')
+  <script type="text/javascript">
 
         jQuery(document).ready(function(){
-            jQuery('#receiver_detail').change(function(e){
+            jQuery('#contact_detail').change(function(e){
                 e.preventDefault();
                 jQuery.ajax({
                     url: "{{ url('/ajax/getcontact') }}",
                     method: 'get',
                     data: {
-                        contact_id: jQuery('#receiver_detail').val(),
+                        contact_id: jQuery('#contact_detail').val(),
                     },
                     success: function(result){
                         $(function () {
-                            console.log(result);
+                           $("#receiver_name").val(result.name);
+                           $("#receiver_email").val(result.email);
+                           $("#receiver_phone").val(result.phone);
                         });
                     }});
             });
+
             jQuery('#template').change(function(e){
                 e.preventDefault();
                 jQuery.ajax({
@@ -144,7 +150,6 @@
                     }});
             });
         });
-
-
     </script>
-@endsection
+
+    @endsection

@@ -25,6 +25,11 @@ class StoreMessageRequest extends FormRequest
     {
         return [
 
+                'message_content'=>['required','string'],
+                'name'=>['required','string'],
+                'email'=>['required','string','email'],
+                'phone'=>['required','string','min:10'],
+
         ];
     }
 }
