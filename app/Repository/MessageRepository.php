@@ -49,7 +49,11 @@ class MessageRepository
 
     public function getEditData($request)
     {
-
+        $event=Event::where('id','=',$request->event_id)->first();
+        $receiver=Receiver::where('id','=',$request->receiver_id)->first();
+        $templates=Template::all();
+        $contacts=Contact::where('user_id','=',Auth::id())->get();
+        return array($event,$receiver,$contacts,$templates);
     }
 
     public function handleEdit($request)

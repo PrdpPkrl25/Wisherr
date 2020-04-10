@@ -8,6 +8,7 @@ use App\Model\Message;
 use App\Model\Receiver;
 use App\Repository\MessageRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class MessageController extends Controller
 {
@@ -72,11 +73,13 @@ class MessageController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  Message  $message
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit(Message $message)
     {
-        //
+        list($event,$receiver,$contacts,$templates)=$this->messageRepository->getEditData($message);
+        return view('message.edit',compact('message','event','receiver','contacts','templates'));
+
     }
 
     /**
@@ -95,7 +98,7 @@ class MessageController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  Message  $message
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {

@@ -54,8 +54,6 @@ class EventController extends Controller
         $this->eventRepository->handleCreate($request);
        return redirect()->route('events.index')->with('message','Event Created Sucessfully');
 
-
-
     }
 
     /**
