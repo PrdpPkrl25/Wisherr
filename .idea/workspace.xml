@@ -3,16 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="359cea87-7b15-469f-8e74-aeeefc8523d9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/SendWish.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/SendWish.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EventController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MessageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Message.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Model/Receiver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Model/Receiver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repository/MessageRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repository/MessageRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/message/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/message/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Jobs/SendEmailJob.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/SendEmailJob.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +198,7 @@
       <workItem from="1586320139531" duration="26974000" />
       <workItem from="1586405408671" duration="11453000" />
       <workItem from="1586422803385" duration="22936000" />
-      <workItem from="1586498454232" duration="16379000" />
+      <workItem from="1586498454232" duration="20769000" />
     </task>
     <servers />
   </component>
@@ -249,9 +242,9 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="297" y="161" key="run.anything.popup/0.0.1280.720@0.0.1280.720" timestamp="1586520351923" />
-    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1586520429446">
+    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1586534111335">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1280.720@0.0.1280.720" timestamp="1586520429446" />
+    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1280.720@0.0.1280.720" timestamp="1586534111335" />
   </component>
 </project>

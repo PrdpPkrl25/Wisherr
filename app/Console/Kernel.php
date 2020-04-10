@@ -27,7 +27,6 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')->hourly();
         $schedule->command('send:wish')->everyMinute();
     }
-
     /**
      * Register the commands for the application.
      *

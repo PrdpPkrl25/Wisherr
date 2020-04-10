@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Jobs\SendEmailJob;
 use App\Model\Message;
 use Illuminate\Console\Command;
 use Illuminate\Queue\Jobs\Job;
@@ -41,9 +42,8 @@ class SendWish extends Command
     public function handle()
     {
         $messages=Message::where('message_time','=',now()->format('Y-m-d H:i:00'))->get();
-        dump($messages);
         foreach ($messages as $message){
-            Mail::to($message->receiver->email)->send(new \App\Mail\SendWish($message));
+        SendEmailJob::dispatch($message);
         }
 
     }
