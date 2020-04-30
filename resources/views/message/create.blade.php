@@ -10,7 +10,7 @@
 
                     <div class="card-body">
 
-                        <form method="post" action="{{route('messages.store',$event->id)}}" id="createMessage">
+                        <form method="post" action="{{route('messages.store',$event->id)}}" >
                             @csrf
                              <div class="card">
                                 <div class="card-header">Enter Receiver Detail:</div>
