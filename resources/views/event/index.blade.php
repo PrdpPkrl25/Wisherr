@@ -8,12 +8,12 @@
                 @endif
                 <div class="card">
                     <div class="card-header ">Your Event List
-                            <a id="createeventbtn" class="btn btn-primary offset-md-8" href="{{route('events.create')}}">Create Event</a>
+                        <a id="createeventbtn" class="btn btn-primary offset-md-8" href="{{route('events.create')}}">Create Event</a>
                     </div>
 
                     <div class="card-body">
 
-                        <table class="table table-bordered">
+                        <table id="myTable" class="table table-bordered" >
                             <thead>
                             <tr>
                                 <th>S.N</th>
@@ -24,14 +24,14 @@
                             </thead>
                             <tbody>
                             @foreach($events as $event)
-                            <tr>
-                                <td>{{$loop->iteration}}</td>
-                                <td>{{$event->event_name}}</td>
-                                <td>{{$event->event_date}}</td>
-                                <td>
-                                    <a class="btn btn-info" href="{{route('events.show',$event->id)}}">Show</a>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>{{$loop->iteration}}</td>
+                                    <td>{{$event->event_name}}</td>
+                                    <td>{{$event->event_date}}</td>
+                                    <td>
+                                        <a class="btn btn-info" href="{{route('events.show',$event->id)}}">Show</a>
+                                    </td>
+                                </tr>
                             @endforeach
                             </tbody>
                         </table>
@@ -41,4 +41,11 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#myTable').DataTable();
+        } );
+    </script>
 @endsection
