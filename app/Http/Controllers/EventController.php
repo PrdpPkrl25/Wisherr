@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\EventsDataTable;
 use App\Http\Requests\StoreEventRequest;
 use App\Model\Event;
 use App\Model\Message;
@@ -27,10 +28,9 @@ class EventController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index(EventsDataTable $dataTable)
     {
-        $events=$this->eventRepository->getIndexdata();
-        return view('event.index',compact('events'));
+        return $dataTable->render('event.index');
     }
 
     /**
