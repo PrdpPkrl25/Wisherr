@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Wisherr') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     <!-- DataTables-->
     <script type="text/javascript " src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -26,9 +27,8 @@
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" ></script>
     <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
 
-
-
 </head>
+
 
 <body>
     <div id="app">
