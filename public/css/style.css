@@ -1,19 +1,20 @@
 @charset "UTF-8";
 
 .navbar{
-    background-color: #00AAAA;
+    background-color: #4dc0b5;
     box-shadow: 0 10px 20px rgba(0,0,0,.4);
     z-index: 150;
     position: fixed;
     width: 100%;
 }
-.container{
-    margin-left: 0px;
-    padding-left: 0px;
+
+.content{
+    padding: 120px;
+
 }
 
 .navbar-brand img{
-    max-width: 110px;
+    max-width: 120px;
     height: auto;
 }
 

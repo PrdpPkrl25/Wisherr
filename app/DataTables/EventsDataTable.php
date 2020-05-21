@@ -20,7 +20,11 @@ class EventsDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables()
-            ->of($query);
+            ->of($query)
+            -> editColumn('action', function ($event_id) {
+        return "<a href=\"/events/$event_id->id\"><button class=\"form-control theme-white theme-blue-bg\"><font style=\"vertical-align: inherit;\"><font style=\"vertical-align: inherit;\">Show</font></font></button></a>";
+    })
+              -> rawColumns(['action']);
 
     }
 
@@ -32,7 +36,7 @@ class EventsDataTable extends DataTable
      */
     public function query()
     {
-        return Event::where('id','=','1');
+        return Event::all();
     }
 
     /**
@@ -46,16 +50,17 @@ class EventsDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     -> parameters([
-        'dom' => 'Bfrtip',
-        'buttons' => ['excel', 'csv', 'print', 'copy', 'pageLength'],
-        'pageLength' => 50,
-        'stateSave' => false,
-        'responsive' => true,
-        'processing'=>true,
-        'serverSide'=>true,
-        "autoWidth" => false,
-        "aLengthMenu" => [[25, 50, 100, 200, 500, -1], [25, 50, 100, 200, 500,'All']],
-    ]);
+                        'dom' => 'Bfrtip',
+                        'buttons'=>['pageLength'],
+                        'pageLength' => 10,
+                        'stateSave' => false,
+                        'responsive' => true,
+                        'processing'=>true,
+                        'serverSide'=>true,
+                        "autoWidth" => false,
+                        "aLengthMenu" => [[25, 50, 100, 200, 500, -1], [25, 50, 100, 200, 500,'All']],
+                        "order" => $this -> setOrderBy(),
+                      ]);
 
     }
 
@@ -78,6 +83,9 @@ class EventsDataTable extends DataTable
     {
         return [
             'id'=>['data'=>'id','name'=> 'id','title'=>'S.N'],
+            'event_name'=>['data'=>'event_name','name'=> 'event_name','title'=>'Event Name'],
+            'event_date'=>['data'=>'event_date','name'=> 'id','title'=>'Event Date'],
+            'action'=>['title'=>'Action'],
         ];
     }
 
