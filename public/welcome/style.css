@@ -14,8 +14,6 @@
     padding-bottom: 5px;
 }
 
-
-
 .navbar-nav{
     font-family: 'Open Sans', sans-serif;
     font-size: 1.4em;
@@ -27,7 +25,7 @@
 }
 
 .nav-item .nav-link{
-    color: #FFF
+    color: #FFF;
 }
 
 .nav-item .nav-link:hover{
@@ -57,7 +55,7 @@
 }
 
 .landing-text h1{
-    font-size: 500%;
+    font-size: 400%;
     font-weight: 700;
 }
 
@@ -70,9 +68,68 @@
     font-size: 120%;
     font-weight: 600;
     margin: 10px;
+    color: #23415C;
+
 }
 
+.padding{
+    padding: 50px 20px;
+    background-color: rgb(226,226,231);
+}
+.padding .row{
+    padding: 20px;
+}
+.padding p{
+    padding:  20px;
+    line-height: 180%;
+}
 
+.padding h2{
+    font-size: 150%;
+    font-weight: 650;
+    color: #23415C;
+    width: 100%;
+    text-align: center;
+}
+
+.padding .benifit{
+    padding:  20px;
+    line-height: 200%;
+    font-size: 1.4em;
+    width: 100%;
+    list-style: none;
+    font-weight: 500;
+}
+
+footer{
+    width: 100%;
+    background-color: #23415C;
+    padding: 2% 2% 4% 2%;
+    color: #FFF;
+}
+
+.fa{
+    padding: 15px;
+    color: #FFF;
+    font-size: 25px;
+}
+
+.fa:hover{
+    color: #686868;
+    text-decoration: none;
+}
+
+footer h2{
+    font-weight: 500;
+}
+
+footer p{
+    line-height: 180%;
+    font-weight: 500;
+    font-size: 1.2em;
+    width: 100%;
+    padding: 10px;
+}
 
 
 
