@@ -9,7 +9,7 @@
     <link href="/welcome/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
@@ -19,16 +19,19 @@
 <body>
 <nav class="navbar  navbar-fixed-top navbar-light navbar-expand-lg " role="navigation">
     <div class="container-fluid">
+        <div class="navbar-header">
         <a class="navbar-brand" href="{{ url('/') }}"> <img height="80px" width="auto" src="{{asset('img/Wisherr.png')}}" alt="Website Logo"> </a>
             <button type="button" class="navbar-toggler " data-toggle="collapse" data-target="#navbar-collapse-main">
                 <span class="sr-only">Navigation Toggler</span>
                 <span class="navbar-toggler-icon "> </span>
             </button>
 
+        </div>
+
             <div class="collapse navbar-collapse" id="navbar-collapse-main">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
@@ -74,9 +77,9 @@
             <h2>Our Services:</h2>
            <ul class="benifit">
                <li> * Create wish for many events like anniversay, birthday, new year etc. </li>
-               <li> * Send message for any no of time in a day. You can select the time. </li>
-               <li>  * Edit your message by choosing any template from our template store. </li>
-               <li>  * Create your own message template or gift card and sell it in our store. </li>
+               <li> * Send message for any number of time in a day. You can select the time. </li>
+               <li> * Edit your message by choosing any template from our template store. </li>
+               <li> * Create your own message template or gift card and sell it in our store. </li>
            </ul>
         </div>
     </div>
