@@ -7,29 +7,28 @@
 
     <link href="/css/app.css" rel="stylesheet">
     <link href="/welcome/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-
 </head>
 
 <body>
-<nav class="navbar  navbar-fixed-top navbar-light navbar-expand-lg " role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header">
+<nav class="navbar  fixed-top navbar-light navbar-expand-lg " role="navigation">
+    <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}"> <img height="80px" width="auto" src="{{asset('img/Wisherr.png')}}" alt="Website Logo"> </a>
-            <button type="button" class="navbar-toggler " data-toggle="collapse" data-target="#navbar-collapse-main">
+            <button type="button" class="navbar-toggler " data-toggle="collapse" data-target="#navbarcollapsemain" aria-controls="navbarcollapsemain" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="sr-only">Navigation Toggler</span>
                 <span class="navbar-toggler-icon "> </span>
             </button>
 
-        </div>
+            <div class="collapse navbar-collapse" id="navbarcollapsemain">
+                <ul class="navbar-nav mr-auto">
 
-            <div class="collapse navbar-collapse" id="navbar-collapse-main">
-                <ul class="nav navbar-nav navbar-right">
+                </ul>
+
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Home</a>
                     </li>
@@ -52,7 +51,7 @@
     <div class="landing-text">
         <h1>WELCOME TO WISHERR</h1>
         <h3>Setup Message For Important Upcoming Event</h3>
-        <a href="{{ route('login') }}" class="btn btn-default btn-lg">Start Creating</a>
+        <a href="{{ route('login') }}" class="btn btn-primary btn-lg">Start Creating</a>
     </div>
 </div>
 

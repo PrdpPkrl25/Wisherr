@@ -2,39 +2,26 @@
 
 .navbar {
     background-color: #4dc0b5;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, .4);
-    padding-bottom: 0;
-    padding-top: 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .4);
+    width: 100%;
 }
 
-.navbar-brand {
-    min-height: 110px;
-    margin-right: 0;
-    padding-top: 0;
-    padding-bottom: 5px;
+.navbar-brand img{
+    max-width: 120px;
+    height: auto;
 }
 
-.navbar-nav{
+.navbar-nav .nav-item{
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.4em;
-    padding: 15px;
-}
-
-.nav-item{
+    font-size: 1.5em;
     padding: 0 15px;
 }
 
-.nav-item .nav-link{
-    color: #FFF;
-}
 
-.nav-item .nav-link:hover{
-    color: #686868;
-    background-color: transparent;
-}
 
 #home{
-    padding-top: 110px;
+    padding-top: 250px;
+    padding-bottom: 150px;
     background-image: url("/img/bgimage.gif");
     background-repeat: no-repeat;
     background-position: center center;
@@ -104,21 +91,19 @@
 footer{
     width: 100%;
     background-color: #23415C;
-    padding: 2% 2% 4% 2%;
+    padding: 4% 2% 4% 2%;
     color: #FFF;
 }
 
 .fa{
-    padding: 15px;
+    padding: 20px;
     color: #FFF;
-    font-size: 25px;
 }
 
 .fa:hover{
     color: #686868;
     text-decoration: none;
 }
-
 footer h2{
     font-weight: 500;
 }
