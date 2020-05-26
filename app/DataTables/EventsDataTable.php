@@ -3,6 +3,7 @@
 namespace App\DataTables;
 
 use App\Model\Event;
+use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Html\Editor\Editor;
@@ -22,7 +23,7 @@ class EventsDataTable extends DataTable
         return datatables()
             ->of($query)
             -> editColumn('action', function ($event_id) {
-        return "<a href=\"/events/$event_id->id\"><button class=\"form-control theme-white theme-blue-bg\"><font style=\"vertical-align: inherit;\"><font style=\"vertical-align: inherit;\">Show</font></font></button></a>";
+        return "<a href=\"/events/$event_id->id\"><button class=\"form-control theme-white theme-blue-bg\"><font style=\"vertical-align: inherit;\"><font style=\"vertical-align: inherit;\">Open</font></font></button></a>";
     })
               -> rawColumns(['action']);
 
@@ -36,7 +37,7 @@ class EventsDataTable extends DataTable
      */
     public function query()
     {
-        return Event::all();
+        return Event::where('user_id','=',Auth::id());
     }
 
     /**

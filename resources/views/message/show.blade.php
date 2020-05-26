@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">{{$event->event_name}} Event Message: <a class="btn btn-primary offset-md-6" href="{{route('messages.create',$event->id)}}">Set New Message</a></div>
 

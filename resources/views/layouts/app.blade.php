@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Wisherr') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -40,7 +40,7 @@
 <body>
     <div id="app">
          @include('layouts.navbar')
-            <div class="content align-items-center">
+            <div class="container">
             @yield('content')
             </div>
     </div>

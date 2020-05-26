@@ -2,12 +2,12 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 @if(session('message'))
                     {{session('message')}}
                 @endif
                 <div class="card">
-                    <div class="card-header">Greeting Template List <a class="btn btn-info offset-md-7 " href="{{route('templates.create')}}">Create New</a></div>
+                    <div class="card-header">Available Template <a class="btn btn-primary offset-md-7 " href="{{route('templates.create')}}">Create New</a></div>
 
                     <div class="card-body">
 

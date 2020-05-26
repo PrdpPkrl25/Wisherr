@@ -1,11 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Welcome to Event Wishes</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,7 +12,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                <h2 class="text-center">Welcome to Event Wishes</h2>
                     <p class="row-cols-1">Click on the button below to create your event or view your event:</p>
                         <div class="col-md-6 offset-md-4">
                            <a id="eventform" class="btn btn-primary" href="{{route('events.create')}}">Create Event</a>
@@ -37,5 +35,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection

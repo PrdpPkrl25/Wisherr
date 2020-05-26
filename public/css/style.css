@@ -4,8 +4,26 @@
     background-color: #4dc0b5;
     box-shadow: 0 5px 10px rgba(0,0,0,.4);
     z-index: 150;
-    position: fixed;
+    position: relative;
     width: 100%;
+    margin-bottom: 20px;
+    padding: 0.2rem 1rem;
+}
+
+.card-header{
+    font-size: 150%;
+    font-weight: 650;
+    color: #23415C;
+    width: 100%;
+    text-align: center;
+}
+
+h2{
+    font-size: 150%;
+    font-weight: 650;
+    color: #23415C;
+    width: 100%;
+    text-align: center;
 }
 
 .content{
@@ -16,8 +34,8 @@
 }
 
 .navbar-brand img{
-    max-width: 120px;
-    height: auto;
+    height: 60px;
+    width: auto;
 }
 
 .nav-item{

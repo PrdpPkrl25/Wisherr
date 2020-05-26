@@ -4,7 +4,7 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Edit message for '{{$event->event_name}}' event.</div>
 
@@ -113,7 +113,7 @@
 @endsection
 
 @section('script')
-
+    <script type="text/javascript">
         jQuery(document).ready(function(){
             jQuery('#contact_detail').change(function(e){
                 e.preventDefault();

@@ -1,11 +1,12 @@
-@extends('layouts.app')
-
+@extends('layouts.welcome-app')
+@section('page_title')
+    {{ "Login to Wisherr" }}
+@endsection
 @section('content')
-<div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header">{{ __('Login to Wisherr') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -77,5 +78,4 @@
             </div>
         </div>
     </div>
-</div>
 @endsection
