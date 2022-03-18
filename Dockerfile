@@ -10,6 +10,8 @@ RUN apt-get update && apt-get install -y \
 
 RUN docker-php-ext-install gd zip
 
+RUN touch .env
+
 COPY .env.example .env
 
 #Composer Image
