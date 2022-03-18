@@ -10,15 +10,13 @@ RUN apt-get update && apt-get install -y \
 
 RUN docker-php-ext-install gd zip
 
-RUN touch .env
-
-COPY .env.example .env
-
 #Composer Image
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-WORKDIR /app
+WORKDIR /var/www/
 COPY . .
+COPY .env.example /var/www/.env
+
 RUN composer install
 RUN  php artisan key:generate
 RUN php artisan serve --host=0.0.0.0 --port=8080
