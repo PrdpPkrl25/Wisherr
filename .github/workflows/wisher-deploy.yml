@@ -24,4 +24,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: ${{ github.ref == 'refs/heads/main' }}
-          tags: prdppkrl25/wisherr:latest
+          builder: ${{ steps.buildx.outputs.name }}
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/wisherr:latest
+          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/wisherr:buildcache
+          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/wisherr:buildcache,mode=max
