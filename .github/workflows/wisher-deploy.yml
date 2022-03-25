@@ -57,7 +57,8 @@ jobs:
         - name: super-step
           shell: bash
           run: |
-            echo " docker stop wisherr_app\
+            echo " ssh -i ${{ secrets.SSH_PRIVATE_KEY }}  root@${{ secrets.SERVER_IP }} -p3030\ 
+            docker stop wisherr_app\
             docker system prune -f\
             docker run -d -p 8008:8000 --name=wisherr_app prdppkrl25/wisherr:latest\ "
 
