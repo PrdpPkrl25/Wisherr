@@ -26,7 +26,7 @@ jobs:
         with:
           push: ${{ github.ref == 'refs/heads/main' }}
           builder: ${{ steps.buildx.outputs.name }}
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/wisherr:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/wisherr:latest,v1
           cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/wisherr:buildcache
           cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/wisherr:buildcache,mode=max
       
