@@ -43,4 +43,12 @@ jobs:
       - uses: mattermost/action-mattermost-notify@master
         env:
           MATTERMOST_WEBHOOK_URL: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
+          
+      - name: Deploy docker container webhook
+        id: redeploy
+        if: ${{ steps.docker_build.outcome == 'success' }}
+        uses: joelwmale/webhook-action@master
+        env:
+          WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL  }}
+          data: "{ 'myField': 'myFieldValue'}"
     
