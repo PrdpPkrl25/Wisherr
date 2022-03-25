@@ -51,4 +51,23 @@ jobs:
         env:
           WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL  }}
           data: "{ 'myField': 'myFieldValue'}"
+          
+  super-job:
+    name: pull image from dockerhub and deploy in server
+    runs-on: ubuntu-18.04
+    container:
+        image: prdppkrl25/wisherr:latest
+        credentials:
+           username: ${{ secrets.DOCKERHUB_USERNAME }}
+           password: ${{ secrets.DOCKERHUB_TOKEN }}
+    steps:
+        - name: super-step
+          shell: bash
+          run: |
+            echo " docker stop wisherr_app\
+            docker system prune -f\
+            docker run -d -p 8008:8000 --name=wisherr_app prdppkrl25/wisherr:latest\ "
+            
+             "
+
     
