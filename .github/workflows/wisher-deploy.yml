@@ -53,6 +53,7 @@ jobs:
           data: "{ 'myField': 'myFieldValue'}"
           
   super-job:
+    needs: [push_to_registry]
     name: pull image from dockerhub and deploy in server
     runs-on: ubuntu-18.04
     container:
