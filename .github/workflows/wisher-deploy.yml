@@ -48,7 +48,7 @@ jobs:
     needs: [push_to_registry]
     name: pull image from dockerhub and deploy in server
     runs-on: ubuntu-18.04
-    container:
+    container: 
         image: prdppkrl25/wisherr:latest
         credentials:
            username: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -66,5 +66,7 @@ jobs:
               docker stop wisherr_app
               docker system prune -f
               docker run -d -p 8008:8000 --name=wisherr_app prdppkrl25/wisherr:latest
+              docker exec -it wisherr_app bash
+              php artisan serve --host=0.0.0.0 -port=8000
 
     
