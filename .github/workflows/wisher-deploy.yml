@@ -66,8 +66,5 @@ jobs:
               docker stop wisherr_app
               docker system prune -f
               docker run -d -p 8008:8000 --name=wisherr_app prdppkrl25/wisherr:latest
-        - name : serve the application
-          run: |
-            docker exec -it wisherr_app bash
-            php /var/www/artisan serve --host=0.0.0.0 -port=8000
+              php /var/www/artisan serve --host=0.0.0.0 -port=8000
     
