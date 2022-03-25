@@ -67,7 +67,5 @@ jobs:
             echo " docker stop wisherr_app\
             docker system prune -f\
             docker run -d -p 8008:8000 --name=wisherr_app prdppkrl25/wisherr:latest\ "
-            
-             "
 
     
