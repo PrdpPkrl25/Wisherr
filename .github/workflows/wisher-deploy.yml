@@ -53,6 +53,7 @@ jobs:
         credentials:
            username: ${{ secrets.DOCKERHUB_USERNAME }}
            password: ${{ secrets.DOCKERHUB_TOKEN }}
+        ports: [8008]
     steps:
         - name: executing remote ssh commands using ssh key
           uses: appleboy/ssh-action@master
@@ -66,5 +67,7 @@ jobs:
               docker stop wisherr_app
               docker system prune -f
               docker run -d -p 8008:8000 --name=wisherr_app prdppkrl25/wisherr:latest
-              php /var/www/artisan serve --host=0.0.0.0 -port=8000
+              docker exec -t wisherr_app php artisan serve --host=0.0.0.0 -port=8000
+
+            
     
