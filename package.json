@@ -29,7 +29,7 @@
         "vue": "^2.5.17",
         "vue-loader": "^15.9.2",
         "vue-template-compiler": "^2.6.10",
-        "webpack-cli": "^3.3.11"
+        "webpack-cli": "^3.3.12"
     },
     "dependencies": {
         "bootstrap-scss": "^4.5.0",
